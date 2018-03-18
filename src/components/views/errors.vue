@@ -12,7 +12,7 @@
     <div style="width:500px">      
       <grid-header :items="headerItems" />
       <div style="padding-top: 26px;">
-        <tree-view :model="treeViewData" />
+        <tree-view :model="errors" />
       </div>
     </div>
     <!--<div class="row">
@@ -37,6 +37,8 @@
       GridHeader
     },
 
+    props: ['errors'],
+
     data () {
       return {
         quote: '',
@@ -44,108 +46,7 @@
         headerItems: [
           { text: 'Rig name' },
           { text: 'Error text', width: 200 }
-        ],
-
-        treeViewData: {
-          columns: [],
-          children: [
-            {
-                columns: [{text: 'Rig 1'}],
-                children: [
-                  {
-                    columns: [{text: '2017'}],
-                    children: [
-                      {
-                        columns: [{text: '1'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      },
-                      {
-                        columns: [{text: '2'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      },
-                      {
-                        columns: [{text: '3'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      },
-                      {
-                        columns: [{text: '4'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    columns: [{text: '2018'}],
-                    children: [
-                      {
-                        columns: [{text: '1'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      },
-                      {
-                        columns: [{text: '2'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      },
-                      {
-                        columns: [{text: '3'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      },
-                      {
-                        columns: [{text: '4'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      }
-                    ]
-                  }
-                ]
-            },
-            {
-                columns: [{text: 'Rig 2'}],
-                children: [ {
-                    columns: [{text: '2017'}],
-                    children: [
-                      {
-                        columns: [{text: '1'}],
-                        children: [
-                          { 
-                            columns: [{text: '01/12/2017  10:01:24'}, {text: 'Some error text', width: 200}]
-                          } 
-                        ]
-                      }
-                    ]
-                }]
-            }
-          ]
-        }
+        ]
       }
     },
 

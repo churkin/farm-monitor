@@ -23,11 +23,11 @@
 
 <template>
   <div height="100%">
-    <app-header></app-header>
+    <app-header />
     <div class="content">
-      <navbar></navbar>
+      <navbar />
       <div style="width:100%; border: 20px solid rgba(216,216,216,0.24)">
-        <router-view></router-view>
+        <router-view />
       </div>
     </div>
   </div>

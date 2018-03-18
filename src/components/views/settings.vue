@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="add-button-container">
-        <small-button text="Add rig" />
+        <small-button text="Add rig" @click="addRig" />
       </div>
       <grid-header :items="poolHeaderItems" />
       <div v-for="pool in pools" class="flex-row">
@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="add-button-container">
-        <small-button text="Add pool" />
+        <small-button text="Add pool" @click="addPool" />
       </div>
       <grid-header :items="scriptHeaderItems" />
       <div v-for="script in scripts" class="flex-row">
@@ -58,22 +58,13 @@
         </div>
       </div>
       <div class="add-button-container">
-        <small-button text="Add script" />
+        <small-button text="Add script" @click="addScript" />
       </div>
     </div>
-    <!--<div class="row">
-      <div class="quote-wrapper">
-        <h2>Random Quote</h2>
-        <p>
-          {{quote}}
-        </p>
-      </div>
-    </div>-->
   </div>
 </template>
 
 <script>
-  import QuoteService from '../../services/quote';
   import TreeView from '../controls/treeview.vue';
   import GridHeader from '../controls/grid-header.vue';
   import SmallButton from '../controls/button.vue';
@@ -91,10 +82,22 @@
       'scripts'
     ],
 
+    methods: {
+      addPool: function() {
+        this.$router.push('/settings/add-pool');
+      },
+
+      addRig: function() {
+        this.$router.push('/settings/add-rig');
+      },
+
+      addScript: function() {
+        this.$router.push('/settings/add-script');
+      }
+    },
+
     data () {
       return {
-        quote: '',
-
         rigHeaderItems: [
           { text: 'Rig name' },
           { text: 'Actions', width: 300 }
@@ -110,14 +113,6 @@
           { text: 'Actions', width: 300 }
         ]
       }
-    },
-
-    mounted () {
-      QuoteService.getQuote(this).then(resp => {
-        this.quote = resp.data[0].content
-      }, (err) => {
-        console.log(err)
-      });
     }
   }
 </script>

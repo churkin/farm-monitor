@@ -8,6 +8,12 @@
       background-color: #222B37;
 
       .nav-item {
+        &:first-child {
+          display: block; 
+          padding-top:40px; 
+          padding-bottom:30px;
+        }
+
         width: 250px;
         border-bottom: 1px solid #FFFFFF;
         padding-left: 40px;
@@ -38,7 +44,7 @@
 
 <template>
   <div class="navbar">
-    <div class="nav-item" style="display: block; padding-top:40px; padding-bottom:30px">
+    <div class="nav-item">
       <div style="display: flex">
         <div class="statisctics-icon" />
         <div style="padding-left: 10px">
