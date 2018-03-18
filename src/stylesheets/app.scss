@@ -1,0 +1,27 @@
+@import '~foundation-sites/scss/foundation.scss';
+@include foundation-everything;
+@include foundation-flex-grid; // Remove this if you want the regular float grid
+@import "./variables.scss";
+@import "./sprite.scss";
+
+body {
+	font-family: Helvetica;
+	color: #000000;
+}
+
+.flex-row {
+	display: flex; 
+	flex-grow: 3;
+	justify-content: space-between;
+}
+
+.view-content {
+	padding-top: 25px; 
+	padding-left: 45px; 
+	padding-bottom: 25px;
+}
+
+.view-caption {
+	font-size: 24px;
+    color: #000000;
+}
