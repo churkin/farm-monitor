@@ -23,6 +23,28 @@ const settingsProps = {
   scripts: ['Miner script 1', 'Miner script 2']
 };
 
+const poolsProps = {
+  pools: {
+    columns: [],
+    children: [
+      {
+        columns: [{text: 'Pool 1', width: 100}, {text: '8.2'}, {text: '8.2'}, {text: '432'}, {text: '2'}],
+        children: [
+          {columns: [{text: 'Worker 1'}, {text: '4'}, {text: '4'}, {text: '200'}, {text: '1'}]},
+          {columns: [{text: 'Worker 2'}, {text: '4.2'}, {text: '4.2'}, {text: '232'}, {text: '1'}]}
+        ]
+      },
+      {
+        columns: [{text: 'Pool 2', width: 100}, {text: '14.2'}, {text: '14.2'}, {text: '534'}, {text: '6'}],
+        children: [
+          {columns: [{text: 'Worker 1'}, {text: '10'}, {text: '10'}, {text: '300'}, {text: '2'}]},
+          {columns: [{text: 'Worker 2'}, {text: '4.2'}, {text: '4.2'}, {text: '234'}, {text: '4'}]}
+        ]
+      },
+    ]
+  }
+};
+
 const errorsProps = {
     errors: {  
         columns: [],
@@ -136,7 +158,8 @@ let routes = [
   {
     path: '/pools',
     name: 'pools',
-    component: Pools
+    component: Pools,
+    props: poolsProps
   },
   {
     path: '/errors',

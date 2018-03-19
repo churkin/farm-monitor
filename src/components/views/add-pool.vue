@@ -19,7 +19,7 @@
 		<text-editor caption="Pool name" width="300" />
 		<text-editor caption="Pool URL" width="300" />
 		<div class="flex-row buttons">
-			<small-button text="Cancel" />	
+			<small-button text="Cancel" @click="onCancel()" />	
 			<small-button text="Save" />
 		</div>
 	</div>
@@ -33,6 +33,12 @@
     components: {
       TextEditor,
       SmallButton
+    },
+
+    methods: {
+    	onCancel: function() {
+    		this.$router.go(-1);
+    	}
     },
 
     data () {

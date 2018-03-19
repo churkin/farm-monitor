@@ -29,7 +29,7 @@
 
 		<text-area caption=".bat file" width="300" />
 		<div class="flex-row buttons">
-			<small-button text="Cancel" />	
+			<small-button text="Cancel" @click="onCancel" />	
 			<small-button text="Save" />
 		</div>
 	</div>
@@ -45,6 +45,12 @@
       TextEditor,
       SmallButton,
       TextArea
+    },
+
+    methods: {
+    	onCancel: function() {
+    		this.$router.go(-1);
+    	}
     },
 
     data () {

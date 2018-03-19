@@ -1,20 +1,60 @@
-<script>
-  export default {
-  }
-</script>
+<style lang="less">
+   .add-pool-view {
+      width: 346px;
+
+      .view-caption {
+        display: block;
+        padding-bottom: 30px;
+      }
+
+      .buttons {
+        padding-top: 4px;
+      }
+   }
+</style>
 
 <template>
-  <div>
-    <div class="row">
-      <div class="medium-6 medium-offset-3 columns">
-        <h2>About Us</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-    </div>
+  <div class="view-content pools-view">
+    <span class="view-caption">Statistics / Pools</span>
+    <grid-header :items="headerItems" />
+    <tree-view :model="pools" />
   </div>
 </template>
+
+<script>
+  import SmallButton from '../controls/button.vue';
+  import TextEditor from '../controls/editor.vue';
+  import GridHeader from '../controls/grid-header.vue';
+  import TreeView from '../controls/treeview.vue';
+
+  export default {
+    components: {
+      TextEditor,
+      SmallButton,
+      TreeView,
+      GridHeader
+    },
+
+    props: [
+      'pools'
+    ],
+
+    methods: {
+      onCancel: function() {
+        this.$router.go(-1);
+      }
+    },
+
+    data () {
+      return {
+          headerItems: [
+              { text: 'Pool name' },
+              { text: 'Hashrate' },
+              { text: 'Avg. hashrate'},
+              { text: 'Shares'}, 
+              { text: 'Active Workers'}
+          ]
+      }
+    }
+  }
+</script>
